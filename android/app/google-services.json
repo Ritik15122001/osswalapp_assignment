@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "321747754186",
+    "project_id": "osswal",
+    "storage_bucket": "osswal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321747754186:android:1642cad9190dd472592833",
+        "android_client_info": {
+          "package_name": "com.example.osswalapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCImPzmtcO1LFHduqgjmrS7Qa__egOjyr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
