@@ -3,7 +3,7 @@ import 'package:osswalapp/Screens/Splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'Provider/FavProvider.dart';
+import 'Provider/CartProvider.dart';
 import 'Screens/HomeScreen.dart';
 import 'firebase_options.dart';
 void main() async{
@@ -11,10 +11,14 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(ChangeNotifierProvider(
-    create: (context) => FavoriteProvider(),
-    child: MyApp(), // Replace with your app's main widget
-  ),);
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => CartProvider()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -30,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:spalsh_screen()
+      home:Home_Screen()
     );
   }
 }

@@ -276,7 +276,7 @@ class _login_screenState extends State<login_screen> {
     String email = _emailController.text;
     String password = _passwordController.text;
     User? user = await _auth.signInWithEmailAndPassword(email, password);
-    if (user != null) {
+    if (user!= null) {
       print("Login sucessful");
       Navigator.of(context).push(
           new MaterialPageRoute(builder: (BuildContext context) {

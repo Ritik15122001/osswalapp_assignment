@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:osswalapp/Model/CartModel.dart';
 import 'package:osswalapp/Screens/login_screen.dart';
 import 'package:osswalapp/Widgets/Grid_item.dart';
-
+import '../Model/CartModel.dart';
 import '../component/BottomNavigation/dashboard.dart';
+import 'Cart.dart';
 class Home_Screen extends StatefulWidget {
   const Home_Screen({super.key});
 
@@ -17,6 +19,7 @@ class _Home_ScreenState extends State<Home_Screen> {
   Widget currentScreen = const Dashboard();
   @override
   Widget build(BuildContext context) {
+
     List<Color> Clrs =[
       Color.fromARGB(255, 246, 111, 58),
       Color.fromARGB(255, 36, 131, 233),
@@ -194,7 +197,12 @@ class _Home_ScreenState extends State<Home_Screen> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.shopping_cart),
         backgroundColor: Colors.redAccent,
-        onPressed: (){},
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CartScreen()),
+          );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
@@ -231,6 +239,10 @@ class _Home_ScreenState extends State<Home_Screen> {
                     MaterialButton(
                       minWidth: 40,
                       onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CartScreen()),
+                        );
                         setState(() {
                           currentTab=1;
                         });
@@ -242,7 +254,7 @@ class _Home_ScreenState extends State<Home_Screen> {
                             color: currentTab==1?Colors.red:Colors.grey,
                           ),
                           Text(
-                            'Wishlist',
+                            'Favorite',
                             style: TextStyle(color: currentTab==1?Colors.red:Colors.grey),
                           )
                         ],
@@ -252,6 +264,10 @@ class _Home_ScreenState extends State<Home_Screen> {
                     MaterialButton(
                       minWidth: 40,
                       onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CartScreen()),
+                        );
                         setState(() {
                           currentTab=2;
                         });
@@ -272,6 +288,10 @@ class _Home_ScreenState extends State<Home_Screen> {
                     MaterialButton(
                       minWidth: 40,
                       onPressed: (){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => CartScreen()),
+                        );
                         setState(() {
                           currentTab=3;
                         });
